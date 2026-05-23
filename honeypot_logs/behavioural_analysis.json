@@ -1,0 +1,90 @@
+{
+  "total_sessions": 8,
+  "session_summaries": [
+    {
+      "playbook": "Reconnaissance",
+      "intent": "reconnaissance",
+      "depth_score": 8.5,
+      "command_diversity": 1.0,
+      "duration_seconds": 5.01,
+      "commands_issued": 5,
+      "narrative": "The attacker performed basic system enumeration, gathering information about the OS, running processes, and system configuration. This suggests initial network reconnaissance activity. Engagement depth: shallow."
+    },
+    {
+      "playbook": "Credential Search",
+      "intent": "credential_harvesting",
+      "depth_score": 13.75,
+      "command_diversity": 1.0,
+      "duration_seconds": 7.51,
+      "commands_issued": 6,
+      "narrative": "The attacker actively searched for credentials and sensitive data, including SSH keys and configuration files. This indicates intent to gain higher privileges or access other systems. Engagement depth: moderate."
+    },
+    {
+      "playbook": "Privilege Escalation",
+      "intent": "privilege_escalation",
+      "depth_score": 9.9,
+      "command_diversity": 1.0,
+      "duration_seconds": 9.01,
+      "commands_issued": 6,
+      "narrative": "The attacker attempted to escalate privileges using sudo and other escalation vectors. This is a critical attack stage indicating persistence intent. Engagement depth: shallow."
+    },
+    {
+      "playbook": "Data Staging",
+      "intent": "data_exfiltration",
+      "depth_score": 6.0,
+      "command_diversity": 1.0,
+      "duration_seconds": 10.01,
+      "commands_issued": 5,
+      "narrative": "The attacker staged data for exfiltration, creating archives and preparing stolen information. This suggests the attack has progressed beyond reconnaissance. Engagement depth: shallow."
+    },
+    {
+      "playbook": "Honeypot Fingerprinting",
+      "intent": "honeypot_detection",
+      "depth_score": 9.75,
+      "command_diversity": 1.0,
+      "duration_seconds": 7.51,
+      "commands_issued": 7,
+      "narrative": "The attacker performed specific checks to detect honeypot/sandbox environments, including Docker, VM, and environment analysis. This indicates a sophisticated attacker. Engagement depth: shallow."
+    },
+    {
+      "playbook": "Configuration Discovery",
+      "intent": "environment_mapping",
+      "depth_score": 12.7,
+      "command_diversity": 1.0,
+      "duration_seconds": 7.01,
+      "commands_issued": 5,
+      "narrative": "The attacker mapped the network environment by reading configuration files and discovering other systems. Preparation for lateral movement. Engagement depth: moderate."
+    },
+    {
+      "playbook": "Persistence Mechanisms",
+      "intent": "persistence",
+      "depth_score": 6.6,
+      "command_diversity": 1.0,
+      "duration_seconds": 6.01,
+      "commands_issued": 6,
+      "narrative": "The attacker attempted to install persistence mechanisms for maintaining future access. Engagement depth: shallow."
+    },
+    {
+      "playbook": "Lateral Movement",
+      "intent": "lateral_movement",
+      "depth_score": 11.2,
+      "command_diversity": 1.0,
+      "duration_seconds": 12.01,
+      "commands_issued": 5,
+      "narrative": "The attacker probed for network connectivity to other internal systems, preparing for lateral movement. Engagement depth: moderate."
+    }
+  ],
+  "intent_distribution": {
+    "reconnaissance": 1,
+    "credential_harvesting": 1,
+    "privilege_escalation": 1,
+    "data_exfiltration": 1,
+    "honeypot_detection": 1,
+    "environment_mapping": 1,
+    "persistence": 1,
+    "lateral_movement": 1
+  },
+  "average_depth_score": 9.8,
+  "average_command_diversity": 1.0,
+  "average_session_duration": 8.01
+}
