@@ -36,7 +36,7 @@ bash setup.sh
 
 ## Research Report
 
-See `reports/my_report.md` for the complete analysis (15,000+ words)
+See `reports/my_report.md` for the complete analysis 
 
 ## Author
 
