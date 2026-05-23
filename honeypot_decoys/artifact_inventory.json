@@ -1,0 +1,66 @@
+[
+  {
+    "name": ".bash_history",
+    "category": "shell_history",
+    "path": "honeypot_decoys/.bash_history",
+    "llm_generated": false,
+    "user": "alice",
+    "purpose": "Show previous commands and exploration patterns"
+  },
+  {
+    "name": "nginx.conf.snippet",
+    "category": "configuration",
+    "path": "honeypot_decoys/nginx.conf.snippet",
+    "llm_generated": false,
+    "user": "sysadmin",
+    "purpose": "Show web server configuration and internal backend IPs"
+  },
+  {
+    "name": ".env.example",
+    "category": "credentials",
+    "path": "honeypot_decoys/.env.example",
+    "llm_generated": false,
+    "user": "deployment",
+    "purpose": "Tempting fake credentials to measure attacker interest"
+  },
+  {
+    "name": "postgresql.log",
+    "category": "logs",
+    "path": "honeypot_decoys/postgresql.log",
+    "llm_generated": false,
+    "user": "sysadmin",
+    "purpose": "Show database activity and potential privilege escalation attempts"
+  },
+  {
+    "name": ".ssh_known_hosts",
+    "category": "ssh_keys",
+    "path": "honeypot_decoys/.ssh_known_hosts",
+    "llm_generated": false,
+    "user": "alice",
+    "purpose": "Reveal internal network topology and IP addresses"
+  },
+  {
+    "name": "crontab",
+    "category": "system_config",
+    "path": "honeypot_decoys/crontab",
+    "llm_generated": false,
+    "user": "sysadmin",
+    "purpose": "Show scheduled tasks and potential persistence mechanisms"
+  },
+  {
+    "name": "firewall_rules.txt",
+    "category": "network_config",
+    "path": "honeypot_decoys/firewall_rules.txt",
+    "llm_generated": false,
+    "user": "sysadmin",
+    "purpose": "Reveal firewall policies and allow attackers to plan network movement"
+  },
+  {
+    "name": "ADMIN_NOTES.txt",
+    "category": "documentation",
+    "path": "honeypot_decoys/ADMIN_NOTES.txt",
+    "llm_generated": false,
+    "user": "sysadmin",
+    "purpose": "Create sense of urgency and reveal security gaps"
+  }
+]

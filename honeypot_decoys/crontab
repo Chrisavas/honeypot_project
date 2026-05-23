@@ -1,0 +1,17 @@
+# /etc/crontab: crontab entries for automated tasks
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Backup jobs
+0 2 * * * root /usr/local/bin/backup_db.sh >> /var/log/backup.log 2>&1
+30 */4 * * * sysadmin /usr/bin/dump_tables.sh
+
+# Maintenance
+0 0 * * 0 root /usr/local/bin/cleanup.sh
+*/15 * * * * deployment /opt/app/healthcheck.sh
+
+# Hidden job (suspicious)
+0 3 * * * root /tmp/.update.sh 2>/dev/null
+
+# Reboot actions
+@reboot root /opt/startup.sh

@@ -1,0 +1,26 @@
+# TODO List - Web Prod Environment
+## Security
+- [ ] Update OpenSSH from 7.4 to 8.2 (CRITICAL CVE-2020-14145)
+- [ ] Apply PostgreSQL security patches
+- [ ] Rotate database credentials
+- [ ] Review user permissions - deployment user has too much access
+- [ ] Disable root login via SSH
+
+## Infrastructure
+- [ ] Add load balancer for db failover
+- [ ] Increase backup frequency to hourly
+- [ ] Test disaster recovery procedures
+- [ ] Monitor disk space on backup server
+
+## Credentials to update:
+- Postgres webapp_user@db.internal
+- Admin panel API key
+- AWS credentials in /root/.aws/
+
+## Known Issues
+- Memory leak in service on port 8082 (needs restart weekly)
+- Slow queries on users table after 1M records
+- Cache invalidation race condition
+
+## Scheduled Maintenance
+- 2024-01-15: Full system patching window (02:00-04:00 UTC)
