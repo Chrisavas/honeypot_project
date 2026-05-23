@@ -1,0 +1,299 @@
+[
+  {
+    "playbook": "Reconnaissance",
+    "start_time": "2026-05-23T22:22:42.701093",
+    "commands_executed": [
+      {
+        "timestamp": "2026-05-23T22:22:42.704407",
+        "command": "whoami",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:22:43.705366",
+        "command": "id",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:22:44.706428",
+        "command": "uname -a",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:22:45.707344",
+        "command": "cat /etc/issue",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:22:46.708159",
+        "command": "ps aux",
+        "response": "Permission denied (publickey,password).\r\n"
+      }
+    ],
+    "banner": "SSH-2.0-OpenSSH_7.4",
+    "end_time": "2026-05-23T22:22:47.709209",
+    "duration_seconds": 5.008116
+  },
+  {
+    "playbook": "Credential Search",
+    "start_time": "2026-05-23T22:22:49.711267",
+    "commands_executed": [
+      {
+        "timestamp": "2026-05-23T22:22:49.714455",
+        "command": "grep -r \"password\" /home",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:22:51.215308",
+        "command": "grep -r \"key\" ~/.ssh/",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:22:52.216323",
+        "command": "cat ~/.ssh/id_rsa",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:22:53.218415",
+        "command": "ls -la ~/.*",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:22:54.219685",
+        "command": "find /opt -name \"*.conf\" -o -name \"*.key\"",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:22:56.221237",
+        "command": "env | grep -i \"pass\\|key\\|secret\"",
+        "response": "Permission denied (publickey,password).\r\n"
+      }
+    ],
+    "banner": "SSH-2.0-OpenSSH_7.4",
+    "end_time": "2026-05-23T22:22:57.223004",
+    "duration_seconds": 7.511737
+  },
+  {
+    "playbook": "Privilege Escalation",
+    "start_time": "2026-05-23T22:22:59.223841",
+    "commands_executed": [
+      {
+        "timestamp": "2026-05-23T22:22:59.227055",
+        "command": "sudo -l",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:00.228113",
+        "command": "sudo su",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:02.229430",
+        "command": "id",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:03.230435",
+        "command": "cat /etc/sudoers",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:04.231521",
+        "command": "find / -perm -4000 2>/dev/null",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:07.232597",
+        "command": "apt list --upgradable 2>/dev/null",
+        "response": "Permission denied (publickey,password).\r\n"
+      }
+    ],
+    "banner": "SSH-2.0-OpenSSH_7.4",
+    "end_time": "2026-05-23T22:23:08.234833",
+    "duration_seconds": 9.010992
+  },
+  {
+    "playbook": "Data Staging",
+    "start_time": "2026-05-23T22:23:10.235254",
+    "commands_executed": [
+      {
+        "timestamp": "2026-05-23T22:23:10.237078",
+        "command": "find /var/www -type f -name \"*.php\" -o -name \"*.js\"",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:12.237755",
+        "command": "tar czf /tmp/backup.tar.gz /var/www/html",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:15.238548",
+        "command": "ls -lh /tmp/",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:16.239271",
+        "command": "du -sh /var/www",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:17.240022",
+        "command": "rsync -avz /var/www/ /tmp/staging/",
+        "response": "Permission denied (publickey,password).\r\n"
+      }
+    ],
+    "banner": "SSH-2.0-OpenSSH_7.4",
+    "end_time": "2026-05-23T22:23:20.243000",
+    "duration_seconds": 10.007746
+  },
+  {
+    "playbook": "Honeypot Fingerprinting",
+    "start_time": "2026-05-23T22:23:22.244845",
+    "commands_executed": [
+      {
+        "timestamp": "2026-05-23T22:23:22.249574",
+        "command": "ls -la /.dockerenv",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:22.750541",
+        "command": "cat /proc/cpuinfo | head -5",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:23.752099",
+        "command": "ifconfig -a 2>/dev/null || ip addr",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:24.753039",
+        "command": "arp -a",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:25.754322",
+        "command": "netstat -tulpn 2>/dev/null | head -20",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:27.755712",
+        "command": "ss -tulpn 2>/dev/null | head -20",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:28.756987",
+        "command": "cat /etc/mtab",
+        "response": "Permission denied (publickey,password).\r\n"
+      }
+    ],
+    "banner": "SSH-2.0-OpenSSH_7.4",
+    "end_time": "2026-05-23T22:23:29.757732",
+    "duration_seconds": 7.512887
+  },
+  {
+    "playbook": "Configuration Discovery",
+    "start_time": "2026-05-23T22:23:31.758950",
+    "commands_executed": [
+      {
+        "timestamp": "2026-05-23T22:23:31.764212",
+        "command": "cat /etc/nginx/nginx.conf",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:32.765209",
+        "command": "cat /etc/postgresql/postgresql.conf 2>/dev/null",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:33.766302",
+        "command": "cat /etc/mysql/my.cnf 2>/dev/null",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:34.768563",
+        "command": "find /etc -name \"*.conf\" | head -20",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:36.770119",
+        "command": "grep -r \"internal\\|secret\\|api_key\" /etc",
+        "response": "Permission denied (publickey,password).\r\n"
+      }
+    ],
+    "banner": "SSH-2.0-OpenSSH_7.4",
+    "end_time": "2026-05-23T22:23:38.771372",
+    "duration_seconds": 7.012422
+  },
+  {
+    "playbook": "Persistence Mechanisms",
+    "start_time": "2026-05-23T22:23:40.772175",
+    "commands_executed": [
+      {
+        "timestamp": "2026-05-23T22:23:40.774527",
+        "command": "cat ~/.bashrc",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:41.775992",
+        "command": "echo \"alias ls='ls -la'\" >> ~/.bashrc",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:42.777482",
+        "command": "crontab -l",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:43.781345",
+        "command": "(crontab -l; echo \"* * * * * /tmp/beacon.sh\") | crontab -",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:44.784615",
+        "command": "ls -la /etc/init.d/",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:45.785196",
+        "command": "cat /etc/rc.local",
+        "response": "Permission denied (publickey,password).\r\n"
+      }
+    ],
+    "banner": "SSH-2.0-OpenSSH_7.4",
+    "end_time": "2026-05-23T22:23:46.786182",
+    "duration_seconds": 6.014007
+  },
+  {
+    "playbook": "Lateral Movement",
+    "start_time": "2026-05-23T22:23:48.787123",
+    "commands_executed": [
+      {
+        "timestamp": "2026-05-23T22:23:48.794458",
+        "command": "cat /etc/hosts",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:49.796228",
+        "command": "nslookup db.internal 2>/dev/null",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:51.797521",
+        "command": "ping -c 3 10.0.1.50",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:53.799079",
+        "command": "ssh-keyscan -t rsa db.internal 2>/dev/null",
+        "response": "Permission denied (publickey,password).\r\n"
+      },
+      {
+        "timestamp": "2026-05-23T22:23:55.800820",
+        "command": "nmap -sV 10.0.1.0/24 2>/dev/null",
+        "response": "Permission denied (publickey,password).\r\n"
+      }
+    ],
+    "banner": "SSH-2.0-OpenSSH_7.4",
+    "end_time": "2026-05-23T22:24:00.801709",
+    "duration_seconds": 12.014586
+  }
+]
